@@ -16,7 +16,7 @@
     <script src="lib/jquery-3.7.1.min.js"></script>
 
     <script>
-        $('#ajax-btn').click(function (){
+        $('#ajax-btn').click(function () {
             // console.log("Started!")
             // var http = new XMLHttpRequest();
             // console.log(http.readyState,"After the XMLHTTPRequest object created");
@@ -38,18 +38,34 @@
             // }
 
 
-            var http = new XMLHttpRequest();
-            http.open('GET', 'db.txt');
-            http.send();
-            http.onreadystatechange = function () {
-                if (http.readyState === 4 && http.status === 200) {
-                    $('#content').text(http.responseText);
+            // var http = new XMLHttpRequest();
+            // http.open('GET', 'db.txt');
+            // http.send();
+            // http.onreadystatechange = function () {
+            //     if (http.readyState === 4 && http.status === 200) {
+            //         $('#content').text(http.responseText);
+            //     }
+            //     if (http.status === 404 && http.readyState === 4) {
+            //         alert("ewww")
+            //     }
+            // }
+
+
+            $.ajax({
+                url: 'db.txt',
+                method: 'GET',
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.log(error);
                 }
-                if (http.status === 404 && http.readyState === 4) {
-                    alert("ewww")
-                }
-            }
+            });
+
         });
+
+
+
     </script>
 
 </body>
