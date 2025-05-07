@@ -35,13 +35,28 @@
 
   <button id="ajax-btn">Click me !</button>
 
+<!--  <table id="data-table">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>First Name</th>-->
+<!--      <th>Last Name</th>-->
+<!--      <th>Address</th>-->
+<!--      <th>Contact No</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+
   <table id="data-table">
     <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Address</th>
-      <th>Contact No</th>
+      <th>Post id</th>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>body</th>
     </tr>
     </thead>
     <tbody>
@@ -133,33 +148,66 @@
 
 // Table ekt data dgnnw ---------------------------------
 
+        //   console.log("start");
+        //
+        //     $.ajax({
+        //       url: 'database.json',
+        //       method: 'GET',
+        //       async : false ,
+        //       success: function (response) {
+        //         let tbody = $('#data-table tbody');
+        //         tbody.empty();
+        //
+        //         response.forEach(function (person) {
+        //           let row = `<tr>
+        //                 <td>${person.FirstName}</td>
+        //                 <td>${person.LastName}</td>
+        //                 <td>${person.Address}</td>
+        //                 <td>${person.ContactNo}</td>
+        //             </tr>`;
+        //           tbody.append(row);
+        //         });
+        //         console.log("completed");
+        //       },
+        //       error: function (error) {
+        //         console.error("Error loading data:", error);
+        //       }
+        //     });
+        //
+        // console.log("end");
+
+
+
+
+
           console.log("start");
 
-            $.ajax({
-              url: 'database.json',
-              method: 'GET',
-              async : false ,
-              success: function (response) {
-                let tbody = $('#data-table tbody');
-                tbody.empty();
+          $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/comments',
+            method: 'GET',
+            async : false ,
+            success: function (response) {
+              let tbody = $('#data-table tbody');
+              tbody.empty();
 
-                response.forEach(function (person) {
-                  let row = `<tr>
-                        <td>${person.FirstName}</td>
-                        <td>${person.LastName}</td>
-                        <td>${person.Address}</td>
-                        <td>${person.ContactNo}</td>
+              response.forEach(function (person) {
+                let row = `<tr>
+                        <td>${person.postId}</td>
+                        <td>${person.id}</td>
+                        <td>${person.name}</td>
+                        <td>${person.email}</td>
+                        <td>${person.body}</td>
                     </tr>`;
-                  tbody.append(row);
-                });
-                console.log("completed")
-              },
-              error: function (error) {
-                console.error("Error loading data:", error);
-              }
-            });
+                tbody.append(row);
+              });
+              console.log("completed");
+            },
+            error: function (error) {
+              console.error("Error loading data:", error);
+            }
+          });
 
-        console.log("end")
+          console.log("end");
 
         });
 
