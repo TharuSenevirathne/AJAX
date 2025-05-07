@@ -133,27 +133,33 @@
 
 // Table ekt data dgnnw ---------------------------------
 
-          $.ajax({
-            url: 'database.json',
-            method: 'GET',
-            success: function (response) {
-              let tbody = $('#data-table tbody');
-              tbody.empty();
+          console.log("start");
 
-              response.forEach(function (person) {
-                let row = `<tr>
+            $.ajax({
+              url: 'database.json',
+              method: 'GET',
+              async : false ,
+              success: function (response) {
+                let tbody = $('#data-table tbody');
+                tbody.empty();
+
+                response.forEach(function (person) {
+                  let row = `<tr>
                         <td>${person.FirstName}</td>
                         <td>${person.LastName}</td>
                         <td>${person.Address}</td>
                         <td>${person.ContactNo}</td>
                     </tr>`;
-                tbody.append(row);
-              });
-            },
-            error: function (error) {
-              console.error("Error loading data:", error);
-            }
-          });
+                  tbody.append(row);
+                });
+                console.log("completed")
+              },
+              error: function (error) {
+                console.error("Error loading data:", error);
+              }
+            });
+
+        console.log("end")
 
         });
 
