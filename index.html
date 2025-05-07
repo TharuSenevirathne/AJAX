@@ -52,10 +52,12 @@
 
 
             $.ajax({
-                url: 'db.txt',
+                url: 'database.json',
                 method: 'GET',
                 success: function (response) {
-                    console.log(response);
+                    console.log(response.FirstName);
+                    console.log(response.LastName);
+                    console.log(response.Address);
                 },
                 error: function (error) {
                     console.log(error);
