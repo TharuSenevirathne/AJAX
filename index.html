@@ -8,8 +8,13 @@
 
   <h1>AJAX Example</h1>
 
-  <div id="content"></div>
-  <br>
+<!--  <div id="content"></div>-->
+<!--  <br>-->
+
+  <p id="fname"></p>
+  <p id="lname"></p>
+  <p id="address"></p>
+  <p id="contact"></p>
 
   <button id="ajax-btn">Click me !</button>
 
@@ -17,6 +22,7 @@
 
     <script>
         $('#ajax-btn').click(function () {
+
             // console.log("Started!")
             // var http = new XMLHttpRequest();
             // console.log(http.readyState,"After the XMLHTTPRequest object created");
@@ -51,22 +57,38 @@
             // }
 
 
-            $.ajax({
-                url: 'database.json',
-                method: 'GET',
-                success: function (response) {
-                    console.log(response.FirstName);
-                    console.log(response.LastName);
-                    console.log(response.Address);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
+        //     $.ajax({
+        //         url: 'database.json',
+        //         method: 'GET',
+        //         success: function (response) {
+        //             console.log(response.FirstName);
+        //             console.log(response.LastName);
+        //             console.log(response.Address);
+        //         },
+        //         error: function (error) {
+        //             console.log(error);
+        //         }
+        //     });
+        //
+        // });
+
+
+
+          $.ajax({
+            url: 'database.json',
+            method: 'GET',
+            success: function (response) {
+              $('#fname').text(response.FirstName);
+              $('#lname').text(response.LastName);
+              $('#address').text(response.Address);
+              $('#contact').text(response.ContactNo);
+            },
+            error: function (error) {
+              console.log(error);
+            }
+          });
 
         });
-
-
 
     </script>
 
