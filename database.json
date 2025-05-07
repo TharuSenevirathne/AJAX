@@ -1,6 +1,15 @@
-{
+[
+  {
   "FirstName" : "Tharu",
   "LastName"  : "Senevirathne",
   "Address"    : "Galle",
-  "ContactNo" : "119"
+  "ContactNo" : "0758162083"
+} ,
+
+{
+  "FirstName" : "Sanduni",
+  "LastName"  : "Senevirathne",
+  "Address"    : "Colombo",
+  "ContactNo" : "1190008935"
 }
+]
