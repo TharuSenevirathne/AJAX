@@ -115,7 +115,7 @@
 
 
 
-          // Console eke data tika dgnnw
+          // Console eke data tika dgnnw  =================================================
 
 
           //     $.ajax({
@@ -138,7 +138,7 @@
 
 
 
-// h1 tag eka yatata data tika gnnw
+// h1 tag eka yatata data tika gnnw =================================================
 
 
           // $.ajax({
@@ -159,7 +159,7 @@
 
 
 
-//  Table ekt data dgnnw database data
+//  Table ekt data dgnnw database data =============================================
 //
 //
 //           console.log("start");
@@ -230,11 +230,37 @@
 
 
 
+          // JSON Object Array eka athule thawa Object 2 k dnw database  ==================================
 
 
+        console.log("start");
 
+          $.ajax({
+            url: 'database.json',
+            method: 'GET',
+            async : false ,
+            success: function (response) {
+              let tbody = $('#data-table tbody');
+              tbody.empty();
 
+                response.forEach(function (person) {
+                let fullAddress = `${person.Address.No}, ${person.Address.District}, ${person.Address.Province}`;
+                let row = `<tr>
+                <td>${person.FirstName}</td>
+                <td>${person.LastName}</td>
+                <td>${fullAddress}</td>
+                <td>${person.ContactNo}</td>
+                </tr>`;
+                tbody.append(row);
+              });
+              console.log("completed");
+            },
+            error: function (error) {
+              console.error("Error loading data:", error);
+            }
+          });
 
+          console.log("end");
 
 
 

@@ -2,14 +2,22 @@
   {
   "FirstName" : "Tharu",
   "LastName"  : "Senevirathne",
-  "Address"    : "Galle",
+  "Address"    : {
+    "No" : "123",
+    "Province"  : "Southern",
+    "District"    : "Galle"
+  },
   "ContactNo" : "0758162083"
 } ,
 
 {
   "FirstName" : "Sanduni",
   "LastName"  : "Senevirathne",
-  "Address"    : "Colombo",
+  "Address"    : {
+    "No" : "123",
+    "Province"  : "Southern",
+    "District"    : "Galle"
+  },
   "ContactNo" : "119000"
 }
 ]
