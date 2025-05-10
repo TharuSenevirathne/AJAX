@@ -5,19 +5,23 @@
     <title>AJAX</title>
 
   <style>
+
     table {
       border-collapse: collapse;
       width: 50%;
       margin-top: 20px;
     }
+
     th, td {
       border: 1px solid #888;
       padding: 8px;
       text-align: left;
     }
+
     th {
       background-color: #f2f2f2;
     }
+
   </style>
 
 </head>
@@ -35,33 +39,39 @@
 
   <button id="ajax-btn">Click me !</button>
 
-<!--  <table id="data-table">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th>First Name</th>-->
-<!--      <th>Last Name</th>-->
-<!--      <th>Address</th>-->
-<!--      <th>Contact No</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    </tbody>-->
-<!--  </table>-->
 
+<!--  database data table-->
 
   <table id="data-table">
     <thead>
     <tr>
-      <th>Post id</th>
-      <th>id</th>
-      <th>name</th>
-      <th>email</th>
-      <th>body</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>Contact No</th>
     </tr>
     </thead>
     <tbody>
     </tbody>
   </table>
+
+
+
+<!--  json placeholder comments table ------------------------------------------ -->
+
+<!--  <table id="data-table">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>Post id</th>-->
+<!--      <th>id</th>-->
+<!--      <th>name</th>-->
+<!--      <th>email</th>-->
+<!--      <th>body</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    </tbody>-->
+<!--  </table>-->
 
     <script src="lib/jquery-3.7.1.min.js"></script>
 
@@ -126,6 +136,8 @@
 
 
 
+
+
 // h1 tag eka yatata data tika gnnw
 
 
@@ -146,38 +158,44 @@
 
 
 
-// Table ekt data dgnnw ---------------------------------
 
-        //   console.log("start");
-        //
-        //     $.ajax({
-        //       url: 'database.json',
-        //       method: 'GET',
-        //       async : false ,
-        //       success: function (response) {
-        //         let tbody = $('#data-table tbody');
-        //         tbody.empty();
-        //
-        //         response.forEach(function (person) {
-        //           let row = `<tr>
-        //                 <td>${person.FirstName}</td>
-        //                 <td>${person.LastName}</td>
-        //                 <td>${person.Address}</td>
-        //                 <td>${person.ContactNo}</td>
-        //             </tr>`;
-        //           tbody.append(row);
-        //         });
-        //         console.log("completed");
-        //       },
-        //       error: function (error) {
-        //         console.error("Error loading data:", error);
-        //       }
-        //     });
-        //
-        // console.log("end");
+//  Table ekt data dgnnw database data
+//
+//
+//           console.log("start");
+//
+//             $.ajax({
+//               url: 'database.json',
+//               method: 'GET',
+//               async : false ,
+//               success: function (response) {
+//                 let tbody = $('#data-table tbody');
+//                 tbody.empty();
+//
+//                 response.forEach(function (person) {
+//                   let row = `<tr>
+//                         <td>${person.FirstName}</td>
+//                         <td>${person.LastName}</td>
+//                         <td>${person.Address}</td>
+//                         <td>${person.ContactNo}</td>
+//                     </tr>`;
+//                   tbody.append(row);
+//                 });
+//                 console.log("completed");
+//               },
+//               error: function (error) {
+//                 console.error("Error loading data:", error);
+//               }
+//             });
+//
+//         console.log("end");
 
 
 
+
+
+
+          // Button eka click krm json placeholder comments tika table ekt load wenw =========================
 
 
           // console.log("start");
@@ -212,37 +230,13 @@
 
 
 
-          // JSON Object ekak athule thawa Object 2 k dnw database eke
 
 
-          console.log("start");
 
-          $.ajax({
-            url: 'https://jsonplaceholder.typicode.com/comments',
-            method: 'GET',
-            async : false ,
-            success: function (response) {
-              let tbody = $('#data-table tbody');
-              tbody.empty();
 
-              response.forEach(function (person) {
-                let row = `<tr>
-                        <td>${person.postId}</td>
-                        <td>${person.id}</td>
-                        <td>${person.name}</td>
-                        <td>${person.email}</td>
-                        <td>${person.body}</td>
-                    </tr>`;
-                tbody.append(row);
-              });
-              console.log("completed");
-            },
-            error: function (error) {
-              console.error("Error loading data:", error);
-            }
-          });
 
-          console.log("end");
+
+
 
         });
 
